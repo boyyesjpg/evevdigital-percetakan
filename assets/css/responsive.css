@@ -1,30 +1,417 @@
-/* Responsive Css & Mobile Optimization (360px - 414px) - Percetakan & Offset Digital */
-@media only screen and (max-width: 480px) {
-  html, body {
-    overflow-x: hidden !important;
+/* ==========================================================================
+   📱 Responsive CSS & Mobile Ergonomics (360px - 414px & Mobile Devices)
+   evevprint — Percetakan Digital, Fotocopy, Jilid & Custom Merch
+   - Zero Horizontal Overflow
+   - Thumb-Friendly CTAs (min-height: 48px)
+   - Anti-Truncation Overrides (Nama Menu, Layanan & Harga 100% Terbaca)
+   ========================================================================== */
+
+/* 1. Global Box-Sizing & Zero Horizontal Overflow */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  -webkit-text-size-adjust: 100%;
+}
+
+#smooth-wrapper,
+#smooth-content,
+main,
+section,
+header,
+footer {
+  max-width: 100vw !important;
+}
+
+img,
+svg,
+video,
+iframe {
+  max-width: 100%;
+}
+
+/* 2. Global Override Rule Usang agar Nama Menu, Layanan & Harga 100% Terbaca */
+.evev-service-card,
+.evev-service-card__body,
+.evev-service-card__title,
+.evev-service-card__price,
+.evev-service-card__meta,
+.evev-service-card__desc,
+.evev-bento-card,
+.evev-bento-card__body,
+.evev-bento-card__title,
+.evev-price-pill,
+.evev-price-badge,
+.evev-plan-card,
+.evev-plan-card__body,
+.evev-plan-features li,
+.evev-merch-card,
+.evev-merch-card__body,
+.evev-merch-card__title,
+.evev-price-table td,
+.evev-price-table th,
+.pricing-plan-item,
+.pricing-plan-item h2,
+.pricing-plan-item h3,
+.pricing-plan-item span,
+.pricing-plan-item li,
+.top-product-item a,
+.top-product-item span,
+.service-item h2,
+.service-item h3,
+.service-item p {
+  max-width: none !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+  -webkit-line-clamp: unset !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Pertahankan scroll internal yang rapi hanya pada wrapper tabel */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Pastikan gambar selalu proporsional & tidak gepeng */
+.evev-service-card__media img,
+.evev-bento-card__media img,
+.evev-merch-card__media img,
+.evev-hero-img,
+.evev-hero-photo,
+.evev-about-img,
+.evev-gallery-img,
+.evev-blog-img,
+.evev-avatar-img,
+.service-photo {
+  object-fit: cover !important;
+}
+
+/* 3. Tablet & Mobile Breakpoint (<= 991px) */
+@media only screen and (max-width: 991px) {
+  .py-120 {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+
+  .pt-120 {
+    padding-top: 64px !important;
+  }
+
+  .pb-120 {
+    padding-bottom: 64px !important;
+  }
+
+  .banner-inner {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  .banner-inner__sidebar {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .banner-inner__content {
+    width: 100% !important;
+    display: block !important;
+  }
+
+  .tw-h-screen {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  .evev-brand-wordmark {
+    font-size: 21px !important;
+  }
+}
+
+/* 4. Mobile Ergonomis Breakpoint (<= 767px) */
+@media only screen and (max-width: 767px) {
+  .container,
+  .container-two {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
     max-width: 100vw !important;
   }
-  .theme-btn, .btn, a.theme-btn, button[type="submit"] {
+
+  /* Tipografi nyaman dibaca di mobile tanpa meluap */
+  h1,
+  .h1 {
+    font-size: clamp(1.65rem, 6.5vw, 2.1rem) !important;
+    line-height: 1.25 !important;
+    word-break: break-word;
+  }
+
+  h2,
+  .h2 {
+    font-size: clamp(1.38rem, 5.4vw, 1.75rem) !important;
+    line-height: 1.3 !important;
+    word-break: break-word;
+  }
+
+  h3,
+  .h3 {
+    font-size: clamp(1.15rem, 4.5vw, 1.4rem) !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Thumb-Friendly CTAs & Interactive Controls (>= 48px) */
+  .theme-btn,
+  .btn,
+  a.btn,
+  a.theme-btn,
+  button[type="submit"],
+  .btn-wa-booking,
+  .accordion-button,
+  .nav-pills .nav-link,
+  .toggle-mobileMenu,
+  .category-btn,
+  .theme-toggle-btn {
     min-height: 48px !important;
+    min-width: 48px !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    font-size: 14px !important;
+    font-size: 14.5px !important;
     font-weight: 700 !important;
     touch-action: manipulation;
+    line-height: 1.3 !important;
   }
+
+  .accordion-button {
+    justify-content: space-between !important;
+    text-align: left !important;
+    padding: 14px 16px !important;
+  }
+
+  .button-responsive-class {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .button-responsive-class .btn,
+  .button-responsive-class a {
+    width: 100% !important;
+  }
+
+  /* Form controls thumb-friendly */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  select,
+  .form-control,
+  .form-select {
+    min-height: 48px !important;
+    font-size: 15px !important;
+  }
+
+  /* Daftar harga & badge tidak terpotong di layar sempit */
+  .evev-price-table thead th,
+  .evev-price-table tbody td {
+    padding: 12px 10px !important;
+    font-size: 13.5px !important;
+    min-width: 110px;
+  }
+
+  .evev-price-table tbody td:nth-child(2) {
+    min-width: 190px;
+  }
+
+  .evev-price-badge,
+  .evev-cat-chip {
+    display: inline-block !important;
+    white-space: normal !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Floating WA Button tidak bertabrakan dengan Floating Template Switcher */
+  .floating-wa-btn {
+    bottom: 76px !important;
+    right: 14px !important;
+    min-height: 48px !important;
+    padding: 10px 16px !important;
+    border-radius: 50px !important;
+    gap: 8px !important;
+    z-index: 99999 !important;
+  }
+
+  .floating-wa-btn span {
+    display: inline !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Template Switcher ergonomis di bawah layar */
   #evev-template-switcher {
     bottom: 12px !important;
-    padding: 6px 10px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: calc(100vw - 20px) !important;
+    max-width: 400px !important;
+    padding: 6px 8px !important;
     gap: 4px !important;
-    max-width: 95vw !important;
+    justify-content: space-between !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
   }
+
   #evev-template-switcher > span {
     display: none !important;
   }
+
   #evev-template-switcher .switcher-pill {
-    padding: 6px 10px !important;
+    flex: 1 1 auto !important;
+    text-align: center !important;
+    min-height: 38px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 6px 8px !important;
     font-size: 11px !important;
+    line-height: 1.2 !important;
     white-space: nowrap !important;
+  }
+
+  /* Tambah ruang aman bawah footer agar tidak tertutup switcher */
+  footer .border-top {
+    padding-bottom: 125px !important;
+  }
+}
+
+/* 5. Target Presisi Layar Mobile Kecil (360px - 414px) */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  html,
+  body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  .py-120 {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  .tw-p-8,
+  .tw-p-10,
+  .tw-px-80-px,
+  .tw-py-80-px,
+  .tw-p-60-px,
+  .tw-px-40-px,
+  .tw-ps-40-px {
+    padding: 20px !important;
+  }
+
+  .evev-service-card__body,
+  .evev-bento-card__body,
+  .evev-merch-card__body,
+  .evev-plan-card__body,
+  .evev-step-card {
+    padding: 18px 16px !important;
+  }
+
+  .evev-service-card__title,
+  .evev-bento-card__title,
+  .evev-merch-card__title {
+    font-size: 17px !important;
+    line-height: 1.4 !important;
+  }
+
+  .evev-service-card__price,
+  .evev-price-pill {
+    font-size: 14.5px !important;
+    padding: 6px 12px !important;
+    white-space: normal !important;
+  }
+
+  .evev-partner-pill {
+    font-size: 13px !important;
+    padding: 9px 12px !important;
+    white-space: normal !important;
+  }
+
+  .evev-hero-img,
+  .evev-hero-photo {
+    height: 220px !important;
+    border-radius: 18px !important;
+  }
+
+  .evev-service-card__media,
+  .evev-bento-card__media,
+  .evev-merch-card__media {
+    height: 190px !important;
+  }
+
+  .subtitle {
+    font-size: 11.5px !important;
+    padding: 6px 12px !important;
+    white-space: normal !important;
+    text-align: center;
+  }
+
+  /* Tab navigasi wrap rapi di 360px - 414px */
+  .nav-pills {
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .nav-pills .nav-item {
+    flex: 1 1 calc(50% - 8px);
+  }
+
+  .nav-pills .nav-link {
+    width: 100% !important;
+    font-size: 13.5px !important;
+    padding: 10px 12px !important;
+  }
+
+  /* Pastikan tombol header tetap muat rapi di 360px */
+  header nav {
+    gap: 8px !important;
+  }
+
+  .evev-brand-wordmark {
+    font-size: 19px !important;
+    gap: 8px !important;
+  }
+
+  .evev-brand-badge {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 18px !important;
+  }
+
+  /* Cegah horizontal overflow dari dekorasi marquee atau elemen absolute */
+  .marquee_left,
+  .animated-slider-wrapper,
+  .banner,
+  .banner-demand,
+  .banner-home-service {
+    overflow: hidden !important;
+    max-width: 100vw !important;
+  }
+}
+
+/* 6. Aksesibilitas: Hormati preferensi reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

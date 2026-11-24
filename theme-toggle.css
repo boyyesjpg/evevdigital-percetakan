@@ -1,0 +1,592 @@
+/* ==========================================================================
+   🌓 EvEvDigital Dual Theme Engine — WCAG AAA High-Contrast (> 7:1)
+   Dark Mode & Light Mode untuk Percetakan, Fotocopy & ATK (evevprint)
+   ========================================================================== */
+
+/* Anti-FOUC: matikan transisi sesaat pada initial paint */
+html.no-theme-transition,
+html.no-theme-transition *,
+html.no-theme-transition *::before,
+html.no-theme-transition *::after {
+  transition: none !important;
+}
+
+/* Smooth transition saat user mengganti tema */
+body,
+header,
+.header,
+.top-header,
+.middle-header,
+.mobile-menu,
+.nav-menu a,
+.nav-submenu,
+.mega-menu,
+section,
+article,
+.pricing-plan-item,
+.card-animation,
+.choose-us-item,
+.service-item,
+.product-item,
+.blog-item,
+.testimonials-item,
+.accordion-item,
+.accordion-button,
+.evev-service-card,
+.evev-price-table-wrap,
+.evev-price-table td,
+.evev-bento-card,
+.evev-step-card,
+.footer,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  transition: background-color 0.28s ease, color 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+/* ==========================================================================
+   ☀️ LIGHT THEME ([data-theme="light"]) — Kontras Teks > 7:1 (WCAG AAA)
+   ========================================================================== */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --evev-bg: #ffffff;
+  --evev-surface: #f8fafc;
+  --evev-surface-alt: #f1f5f9;
+  --evev-card-bg: #ffffff;
+  --evev-border: #cbd5e1;
+  --evev-heading: #0f172a;        /* 17.85:1 on #fff */
+  --evev-body: #1e293b;           /* 14.63:1 on #fff */
+  --evev-muted: #334155;          /* 9.90:1 on #f8fafc */
+  --evev-accent: #9d0056;         /* 8.18:1 on #fff */
+  --evev-accent-2: #005a8d;       /* 7.38:1 on #fff */
+  --evev-accent-soft: #fff1f7;
+  --evev-accent-2-soft: #eff8ff;
+  --evev-shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
+
+  /* Kompatibilitas variabel template bawaan */
+  --white: 0 0% 100%;
+  --black: 222 47% 11%;
+  --body: 215 28% 17%;
+  --heading-color: #0f172a;
+  --body-color: #1e293b;
+}
+
+[data-theme="light"] body {
+  background-color: var(--evev-bg) !important;
+  color: var(--evev-body) !important;
+}
+
+[data-theme="light"] header,
+[data-theme="light"] .header,
+[data-theme="light"] .top-header,
+[data-theme="light"] .middle-header {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+[data-theme="light"] .section-bg,
+[data-theme="light"] .banner-bg-light,
+[data-theme="light"] .bg-neutral-50,
+[data-theme="light"] .bg-neutral-100 {
+  background-color: var(--evev-surface) !important;
+}
+
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6,
+[data-theme="light"] .text-heading,
+[data-theme="light"] .nav-menu__link {
+  color: var(--evev-heading) !important;
+}
+
+[data-theme="light"] p,
+[data-theme="light"] .text-body,
+[data-theme="light"] .text-body-3,
+[data-theme="light"] .text-body-5,
+[data-theme="light"] .text-body-6,
+[data-theme="light"] .text-body-7,
+[data-theme="light"] .text-neutral-500,
+[data-theme="light"] .text-neutral-600 {
+  color: var(--evev-body) !important;
+}
+
+[data-theme="light"] .text-main-600,
+[data-theme="light"] .text-pink-600 {
+  color: var(--evev-accent) !important;
+}
+
+[data-theme="light"] .subtitle {
+  color: var(--evev-accent) !important;
+  border-color: var(--evev-accent) !important;
+  background-color: var(--evev-accent-soft) !important;
+}
+
+[data-theme="light"] .pricing-plan-item,
+[data-theme="light"] .choose-us-item,
+[data-theme="light"] .service-item,
+[data-theme="light"] .blog-item,
+[data-theme="light"] .testimonials-item,
+[data-theme="light"] .evev-service-card,
+[data-theme="light"] .evev-bento-card,
+[data-theme="light"] .evev-step-card,
+[data-theme="light"] .evev-price-table-wrap {
+  background-color: var(--evev-card-bg) !important;
+  border: 1px solid #dbe4ee !important;
+  box-shadow: var(--evev-shadow) !important;
+}
+
+[data-theme="light"] .bg-main-600 {
+  background-color: var(--evev-accent) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .bg-main-two-600 {
+  background-color: var(--evev-accent-2) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .bg-navy-black h1,
+[data-theme="light"] .bg-navy-black h2,
+[data-theme="light"] .bg-navy-black h3,
+[data-theme="light"] .bg-navy-black p,
+[data-theme="light"] .bg-navy-black span,
+[data-theme="light"] .bg-main-two-600 h1,
+[data-theme="light"] .bg-main-two-600 h2,
+[data-theme="light"] .bg-main-two-600 h3,
+[data-theme="light"] .bg-main-two-600 p,
+[data-theme="light"] .bg-main-two-600 .text-white {
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .bg-navy-black .subtitle,
+[data-theme="light"] .bg-main-two-600 .subtitle {
+  color: #f9a8d4 !important;
+  border-color: #f9a8d4 !important;
+  background-color: rgba(249, 168, 212, 0.14) !important;
+}
+
+/* ==========================================================================
+   🌙 DARK THEME ([data-theme="dark"]) — Kontras Teks > 7:1 (WCAG AAA)
+   ========================================================================== */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --evev-bg: #090d16;
+  --evev-surface: #0e1422;
+  --evev-surface-alt: #161f32;
+  --evev-card-bg: #111827;
+  --evev-border: rgba(255, 255, 255, 0.14);
+  --evev-heading: #f8fafc;        /* 18.57:1 on #090d16 */
+  --evev-body: #e2e8f0;           /* 14.39:1 on #111827 */
+  --evev-muted: #cbd5e1;          /* 11.95:1 on #111827 */
+  --evev-accent: #f9a8d4;         /* 9.78:1 on #111827 */
+  --evev-accent-2: #7dd3fc;       /* 10.64:1 on #111827 */
+  --evev-accent-soft: rgba(249, 168, 212, 0.14);
+  --evev-accent-2-soft: rgba(125, 211, 252, 0.14);
+  --evev-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+
+  /* Kompatibilitas variabel template bawaan */
+  --white: 222 47% 11%;
+  --black: 210 40% 98%;
+  --body: 214 32% 91%;
+  --neutral-50: #0e1422;
+  --neutral-100: rgba(255, 255, 255, 0.08);
+  --neutral-200: rgba(255, 255, 255, 0.14);
+  --neutral-300: rgba(255, 255, 255, 0.2);
+  --neutral-600: rgba(255, 255, 255, 0.18);
+  --heading-color: #f8fafc;
+  --body-color: #e2e8f0;
+}
+
+[data-theme="dark"] body {
+  background-color: var(--evev-bg) !important;
+  color: var(--evev-body) !important;
+}
+
+[data-theme="dark"] .bg-white,
+[data-theme="dark"] .bg-neutral-50,
+[data-theme="dark"] .bg-neutral-100,
+[data-theme="dark"] .banner-bg-light,
+[data-theme="dark"] .section-bg,
+[data-theme="dark"] .bg-red-50,
+[data-theme="dark"] .bg-blue-50,
+[data-theme="dark"] .bg-green-50,
+[data-theme="dark"] .bg-yellow-50,
+[data-theme="dark"] .bg-pink-50,
+[data-theme="dark"] .bg-slate-100 {
+  background-color: var(--evev-surface) !important;
+}
+
+[data-theme="dark"] header,
+[data-theme="dark"] .header,
+[data-theme="dark"] .middle-header,
+[data-theme="dark"] .top-header,
+[data-theme="dark"] .mobile-menu {
+  background-color: #0c1220 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+[data-theme="dark"] .nav-menu__link,
+[data-theme="dark"] .text-heading,
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: var(--evev-heading) !important;
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] .text-body,
+[data-theme="dark"] .text-body-1,
+[data-theme="dark"] .text-body-3,
+[data-theme="dark"] .text-body-5,
+[data-theme="dark"] .text-body-6,
+[data-theme="dark"] .text-body-7,
+[data-theme="dark"] .text-neutral-500,
+[data-theme="dark"] .text-neutral-600 {
+  color: var(--evev-body) !important;
+}
+
+[data-theme="dark"] .text-main-600,
+[data-theme="dark"] .text-pink-600 {
+  color: var(--evev-accent) !important;
+}
+
+[data-theme="dark"] .subtitle {
+  color: var(--evev-accent-2) !important;
+  border-color: var(--evev-accent-2) !important;
+  background-color: var(--evev-accent-2-soft) !important;
+}
+
+[data-theme="dark"] .nav-submenu,
+[data-theme="dark"] .mega-menu {
+  background-color: var(--evev-card-bg) !important;
+  border: 1px solid var(--evev-border) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55) !important;
+}
+
+[data-theme="dark"] .pricing-plan-item,
+[data-theme="dark"] .choose-us-item,
+[data-theme="dark"] .service-item,
+[data-theme="dark"] .product-item,
+[data-theme="dark"] .blog-item,
+[data-theme="dark"] .testimonials-item,
+[data-theme="dark"] .working-process-item,
+[data-theme="dark"] .accordion-item,
+[data-theme="dark"] .evev-service-card,
+[data-theme="dark"] .evev-bento-card,
+[data-theme="dark"] .evev-step-card,
+[data-theme="dark"] .evev-price-table-wrap {
+  background-color: var(--evev-card-bg) !important;
+  border: 1px solid var(--evev-border) !important;
+  box-shadow: var(--evev-shadow) !important;
+}
+
+[data-theme="dark"] .accordion-button {
+  background-color: var(--evev-card-bg) !important;
+  color: var(--evev-heading) !important;
+}
+
+[data-theme="dark"] .accordion-body {
+  background-color: var(--evev-card-bg) !important;
+  color: var(--evev-body) !important;
+}
+
+[data-theme="dark"] .pricing-plan-item ul li,
+[data-theme="dark"] .evev-price-table tbody td {
+  color: var(--evev-body) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .bg-main-600 {
+  background-color: #9d0056 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .bg-main-two-600 {
+  background-color: #005a8d !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .btn.bg-transparent {
+  color: #7dd3fc !important;
+  border-color: #7dd3fc !important;
+}
+
+[data-theme="dark"] .btn.bg-transparent:hover {
+  background-color: #005a8d !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] input[type="text"],
+[data-theme="dark"] input[type="email"],
+[data-theme="dark"] input[type="tel"],
+[data-theme="dark"] input[type="date"],
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+  background-color: #0e1422 !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] ::placeholder {
+  color: #cbd5e1 !important;
+  opacity: 0.85;
+}
+
+[data-theme="dark"] .toggle-mobileMenu,
+[data-theme="dark"] .category-btn {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .evev-icon-circle {
+  background-color: #1e293b !important;
+  color: #7dd3fc !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+/* ==========================================================================
+   🔘 THEME TOGGLE BUTTON (Aksesibel & Responsif)
+   ========================================================================== */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid #cbd5e1;
+  background: #f1f5f9;
+  color: #0f172a;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  vertical-align: middle;
+  padding: 0;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .theme-toggle-btn {
+  background: #1e293b;
+  color: #fde047;
+  border-color: rgba(253, 224, 71, 0.45);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.theme-toggle-btn:hover,
+.theme-toggle-btn:focus-visible {
+  transform: translateY(-2px) scale(1.06);
+  border-color: #005a8d;
+  background: #005a8d;
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(0, 90, 141, 0.35);
+}
+
+.theme-toggle-btn:focus-visible {
+  outline: 3px solid #7dd3fc;
+  outline-offset: 2px;
+}
+
+.theme-toggle-btn svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle-btn:active svg {
+  transform: rotate(45deg);
+}
+
+/* ==========================================================================
+   💬 FLOATING WHATSAPP QUICK PILL (Kontras > 7:1 — #FFFFFF on #0E632E)
+   ========================================================================== */
+.floating-wa-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99999;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #127a3a 0%, #0e632e 100%);
+  color: #ffffff !important;
+  padding: 12px 22px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none !important;
+  box-shadow: 0 8px 24px rgba(14, 99, 46, 0.48);
+  transition: all 0.25s ease;
+  animation: waPulse 2.8s infinite;
+}
+
+.floating-wa-btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 12px 30px rgba(14, 99, 46, 0.65);
+  color: #ffffff !important;
+}
+
+.floating-wa-btn i,
+.floating-wa-btn svg {
+  font-size: 20px;
+  color: #ffffff !important;
+}
+
+@keyframes waPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(18, 122, 58, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(18, 122, 58, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(18, 122, 58, 0);
+  }
+}
+
+@media (max-width: 767px) {
+  .floating-wa-btn {
+    bottom: 74px !important;
+    right: 16px !important;
+    padding: 11px 16px !important;
+    border-radius: 50px !important;
+  }
+  .floating-wa-btn span {
+    display: inline !important;
+    font-size: 13px !important;
+  }
+}
+
+/* ==========================================================================
+   🖼️ EVEVPRINT VISUAL HELPERS & HIGH-CONTRAST SOLID DARK FOOTER
+   ========================================================================== */
+.service-photo-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+
+.service-photo {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-photo,
+.service-item:hover .service-photo {
+  transform: scale(1.05);
+}
+
+.badge-pill {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: linear-gradient(135deg, #005a8d, #0369a1);
+  color: #ffffff !important;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.32);
+  z-index: 2;
+}
+
+/* SOLID HIGH-CONTRAST DARK FOOTER (> 13:1) */
+.footer,
+footer,
+.footer-section,
+.footer-two,
+.footer-area {
+  background-color: #070a0e !important;
+  color: #e2e8f0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.footer p,
+footer p,
+.footer span,
+footer span {
+  color: #e2e8f0 !important;
+  opacity: 1 !important;
+}
+
+.footer a,
+footer a {
+  color: #cbd5e1 !important;
+}
+
+.footer a:hover,
+footer a:hover {
+  color: #7dd3fc !important;
+}
+
+.footer h1,
+.footer h2,
+.footer h3,
+.footer h4,
+.footer h5,
+.footer h6,
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6 {
+  color: #ffffff !important;
+}
+
+.footer .form-control,
+footer .form-control {
+  background-color: #111827 !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+  color: #ffffff !important;
+}
+
+.footer .form-control::placeholder,
+footer .form-control::placeholder {
+  color: #cbd5e1 !important;
+}
+
+.footer-maker {
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  font-size: 14px;
+  color: #e2e8f0 !important;
+}
+
+.footer-maker b {
+  font-weight: 800;
+  color: #7dd3fc !important;
+}
+
+/* Hindari duplikasi floating WA lama */
+.wa-floating,
+.wa-float-pill,
+.whatsapp-float:not(.floating-wa-btn) {
+  display: none !important;
+}
